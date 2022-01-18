@@ -1,4 +1,4 @@
-let counterValue = 0;
+let counterValue = parseInt(document.querySelector('#value').textContent);
 
 const buttonDecrement = document.querySelector('button[data-action="decrement"]');
 const buttonIncrement = document.querySelector('button[data-action="increment"]');
