@@ -5,14 +5,23 @@ form.addEventListener('submit', loginButtonClick);
 function loginButtonClick(event) {
   event.preventDefault();
 
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
+  const password = event.currentTarget.password.value;
+  const email = event.currentTarget.email.value;
 
-  if (email.value === '' || password.value === '') {
+  const userCredentials = { email, password };
+
+  // const formData = new FormData(event.currentTarget);
+
+  // formData.forEach((value, name) => {
+  //   console.log(name);
+  //   console.log(value);
+  // });
+
+  if (email === '' || password === '') {
     alert('Please fill in all the fields!');
+  } else {
+    return console.log(userCredentials);
   }
 
-  console.log(`Login: ${email.value}, Password: ${password.value}`);
   event.currentTarget.reset();
 }
